@@ -129,7 +129,7 @@ const SignUpForm = ({handleClose}) => {
         size='large'
         style={{
             backgroundColor : theme.textColor,
-            color : theme.backgroundColor
+            color : theme.background
         }}
         onClick={handleSubmit}>SignUp</Button>
     </Box>
