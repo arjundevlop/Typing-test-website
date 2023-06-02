@@ -88,10 +88,19 @@ const TypingBox = () => {
         wordsSpanRef[0].current.childNodes[0].className = "current";
     },[]);
 
+    const removeExtraChars = ()=>{
+        let allextraChars = document.getElementsByClassName("extra");
+        let allextraCharArr = Array.from(allextraChars);
+        allextraCharArr.forEach((elem)=>{
+            elem.parentNode.removeChild(elem);
+        })
+    }
+
     const resetTest = ()=>{
         if(!testEnd){
         clearInterval(intervalId)
         setcountDown(testTime);
+        removeExtraChars(); // to handle:- if user typed extra words then they remained on screen even if user reset time mode
         setcurrWordIndex(0);
         setcurrCharIndex(0);
         settestStart(false);
